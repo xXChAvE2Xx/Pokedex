@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <!-- GOogle Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Input de busqueda -->
+    <div class="pokeBuscador">
+        <input id="pokeName" type="text" placeholder="Nombre del pokemon" />
+        <div id="buscar-bnt" class="">
+            <button onclick="fetchPokemon()">Buscar</button>
+        </div>
+    </div>
+    <div id="pokedex">
+        <div class="mitad-izq">
+            <div class="izq-top-contenedor">
+                <svg height="100" width="100%" class="izq-svg">
+                    <polyline points="0,75 70,75 90,38 340,38" style="fill: none; stroke: black; stroke-width: 3" />
+                </svg>
+                <div class="leds-contenedor">
+                    <div class="led-g-contenedor">
+                        <div class="led-g blue">
+                            <div class="dot-g light-blue"></div>
+                        </div>
+                    </div>
+                    <div class="ledPeque-contenedor">
+                        <div class="led-peque red">
+                            <div class="dot light-red"></div>
+                        </div>
+                        <div class="led-peque yellow">
+                            <div class="dot light-yellow"></div>
+                        </div>
+                        <div class="led-peque green">
+                            <div class="dot light-green"></div>
+                        </div>
+                    </div>
+                </div> <!-- ./leds-contenedor -->
+            </div><!-- ./izq-top-contenedor -->
+            <div class="pantalla-contenedor">
+                <div class="pantalla">
+                    <div class="ledsSuperiores">
+                        <div class="led-m red"></div>
+                        <div class="led-m  red"></div>
+                    </div>
+                    <div id="pokeIMG"><img src="./assets/img/default.gif" alt="Pokemon"></div>
+                    <div class="ledsFinales">
+                        <div class="led-peque red">
+                            <div class="dot light-red"></div>
+                        </div>
+                        <div class="burger">
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ./pantalla-contenedor -->
+
+            <div class="contenedor-final">
+                <div class="contenedor-btn-up">
+                    <div class="btn-g"></div>
+                    <div class="contenedor-l-btn">
+                        <div class="btn-l red"></div>
+                        <div class="btn-l light-blue"></div>
+                    </div>
+                </div>
+                <div class="botonesNavegador-contenedor">
+                    <div class="contenedor-dots">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="pantalla-verde">
+                        <span id="pokeName-view"></span>
+                    </div>
+                    <div class="nav-izq-contenedor">
+                        <div class="nav-btn">
+                            <div class="nav-centro-c"></div>
+                            <div class="nav-btn-v"></div>
+                            <div class="nav-btn-h">
+                                <div class="borde-arriba"></div>
+                                <div class="borde-abajo"></div>
+                            </div>
+                        </div>
+                        <div class="contenedor-izq-nav-final"></div>
+                    </div>
+                </div>
+            </div><!-- ./contenedor-final -->
+        </div><!-- ./mitad-izq -->
+
+
+        <div id="mitad-der">
+            <!-- Blank container -->
+            <div class="contenedor-vacio">
+                <svg height="100%" width="100%">
+                    <polyline points="0,0 0,40 138,40 158,75 340,75 380,0 0,0"
+                        style="fill: #f2f2f2; stroke: none; stroke-width: 3" />
+                    <polyline points="0,40 138,40 158,75 350,75" style="fill: none; stroke: black; stroke-width: 3" />
+                </svg>
+            </div>
+            <!-- Pantalla info -->
+            <div class="contendor-pantalla-info">
+                <div id="pantalla-info" class="pantallaDerecha">
+
+                </div>
+            </div>
+            <!-- Bootnes Azules (Diseño) -->
+            <div class="contenedor-botones-azules">
+                <div class="botones-contenedor-grdi">
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                    <div class="cuardo-azul"></div>
+                </div>
+            </div>
+            <!-- Botones del centro -->
+            <div class="contenedor-btn-centro">
+                <div class="contenedor-der-c">
+                    <div class="contenedor-leds-peque">
+                        <div class="led-peque red">
+                            <div class="dot light-red"></div>
+                        </div>
+                        <div class="led-peque red">
+                            <div class="dot light-red"></div>
+                        </div>
+                    </div>
+                    <div class="conteneodr-cuadros-blancos">
+                        <div class="cuadro-b"></div>
+                        <div class="cuadro-b"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pantallas info finales -->
+            <div class="contenedor-pantallas-finales">
+                <div id="type-screen" class="pantalla-der-p">-</div>
+                <div id="id-screen" class="pantalla-der-p">#-</div>
+            </div>
+        </div> <!-- ./mitad-der -->
+    </div><!-- ./pokedex -->
+</body>
+<script src="./assets/js/scripts.js"></script>
+
+</html>

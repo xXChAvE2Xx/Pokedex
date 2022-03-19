@@ -1,0 +1,568 @@
+:root {
+    --main-bg-color: #fe0065;
+    --secondary-bg-color: #f2f2f2;
+    --main-screen-bg-color: #98cb98;
+    --secondary-screen-bg-color: #9e9d9d;
+    --main-buttons-color: #585858;
+    --square-buttons-color: #7ca9f7;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--secondary-bg-color);
+  }
+
+  /* colores */
+  .red {
+    background-color: #ff0000;
+  }
+  .yellow {
+    background-color: #fecb65;
+  }
+  .green {
+    background-color: #32cb65;
+  }
+  .blue {
+    background-color: #009DD4;
+  }
+  
+  .light-blue {
+    background-color: #0BCDFF;
+  }
+  .light-red {
+    background-color: #fe98cb;
+  }
+  .light-yellow {
+    background-color: #fefecb;
+  }
+  .light-green {
+    background-color: #98fe00;
+  }
+  
+  /* pokedex */
+  #pokedex {
+    height: 490px;
+    width: calc(344px * 2);
+    display: flex;
+    border-radius: 10px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #pokedex {
+      width: 90%;
+    }
+  }
+
+  .pokeBuscador {
+    width: 40%;
+    height: 80px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button{
+    background-color: var(--main-bg-color);
+    border: none;
+    color: white;
+    padding: 16px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Press Start 2P';
+  }
+
+  input {
+    text-align: center;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  /* Panel Izquierdo */
+  .mitad-izq {
+    background-color: var(--main-bg-color);
+    box-sizing: border-box;
+    height: 100%;
+    width: 50%;
+    display: grid;
+    grid-template-rows: 13% 50% 27%;
+    border: solid black 3px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 7px;
+  }
+
+  /* Luces LEDS */
+
+.leds-contenedor {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .izq-svg {
+    position: absolute;
+    z-index: +5;
+  }
+  
+  .led-g-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    height: 60px;
+    width: 60px;
+    border: solid black;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .led-g {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: solid black;
+  }
+  
+  .dot-g {
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    border-radius: 50%;
+  }
+  
+  .ledPeque-contenedor {
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-self: start;
+    justify-content: space-around;
+  }
+  
+  .led-peque {
+    border: solid black;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+
+  .dot {
+    height: 5px;
+    width: 5px;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+  }
+
+
+  /* Pantalla del centro */
+
+.pantalla-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pantalla {
+  width: 150px;
+  height: 150px;
+  border: solid black;
+  border-radius: 0 0 0 17%;
+  display: grid;
+  grid-template-rows: 10% 72% 18%;
+  background-color: white;
+}
+
+.ledsSuperiores {
+  width: 50%;
+  margin-top: 2px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.led-m  {
+  border: solid black 1px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+#pokeIMG {
+  height: 100%;
+  width: 80%;
+  justify-self: center;
+  background-color: var(--main-screen-bg-color);
+  border: solid black 2px;
+  border-radius: 5%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#pokeIMG img{
+  margin: -95px;
+  width: 116px;
+  height: 105px;
+  padding: 97px;
+}
+
+.ledsFinales {
+  display: flex;
+  margin-top: 5px;
+  width: 75%;
+  justify-self: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ledsFinales .led-peque {
+  border: solid black 2px;
+  width: 12px;
+  height: 12px;
+}
+
+.ledsFinales  .dot {
+  height: 4px;
+  width: 4px;
+  top: 2.5px;
+  left: 2px;
+}
+
+.linea {
+  width: 18px;
+  height: 2px;
+  background-color: black;
+  margin-top: 2px;
+}
+
+
+/*  Botones Finales */
+
+.contenedor-final {
+  display: grid;
+  grid-template-rows: 40% 60%;
+}
+
+.contenedor-btn-up {
+  display: flex;
+  align-items: top;
+  justify-content: start;
+}
+
+.contenedor-l-btn {
+  display: flex;
+  width: 100px;
+  justify-content: space-around;
+  margin-left: 10px;
+  margin-top: -15px;
+}
+
+.btn-g {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 2px black;
+  background-color: var(--main-buttons-color);
+  margin-left: 7px;
+  margin-top: -14px;
+}
+
+.btn-l {
+  width: 35px;
+  height: 2px;
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+.botonesNavegador-contenedor {
+  display: grid;
+  grid-template-columns: 27% 35% 38%;
+}
+
+.contenedor-dots {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  font-size: x-large;
+}
+
+.pantalla-verde {
+  width: 131px;
+  height: 39px;
+  border-radius: 5px;
+  border: solid black 2px;
+  background-color: #3ab47d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pokeName {
+  width: 100%;
+  font-family: 'Press Start 2P';
+  text-align: center;
+  font-size: 8.5px;
+  overflow-wrap: break-word;
+}
+
+.circle {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.nav-izq-contenedor {
+  position: relative;
+  top: -90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-btn {
+  height: 52px;
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-centro-c {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  border: solid black 2px;
+  z-index: +2;
+}
+
+.nav-btn-v {
+  position: absolute;
+  transform: rotate(90deg);
+  background-color: var(--main-buttons-color);
+  border-radius: 5px;
+  height: 12px;
+  width: 52px;
+  border: 2px solid black;
+}
+
+.nav-btn-h {
+  position: absolute;
+  background-color: var(--main-buttons-color);
+  border-radius: 5px;
+  height: 12px;
+  width: 52px;
+  border: 2px solid black;
+}
+
+.borde-arriba {
+  border-top: 3.5px solid var(--main-buttons-color);
+  position: absolute;
+  top: -3px;
+  left: 20px;
+  right: 19.5px;
+}
+
+.borde-abajo {
+  border-top: 3.5px solid var(--main-buttons-color);
+  position: absolute;
+  top: 11px;
+  left: 20px;
+  right: 19.5px;
+}
+
+.contenedor-izq-nav-final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contenedor-izq-nav-final .dots-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-izq-nav-final .led-peque {
+  border: solid black 2px;
+  width: 7px;
+  height: 7px;
+  margin-right: 3px;
+  margin-top: 10px;
+}
+
+.bottom-right-nav-container .dot {
+  height: 2.5px;
+  width: 2.5px;
+  top: 1.5px;
+  left: 1.5px;
+}
+
+/* Panel Derecho */
+
+#mitad-der {
+  background-color: var(--main-bg-color);
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 24% repeat(4, 19%);
+  border-bottom: solid black 3px;
+  border-bottom-right-radius: 10px;
+}
+#mitad-der::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  width: 100%;
+  height: 413px;
+  border-right: solid black 3px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Pantalla Info Superior*/
+
+.contendor-pantalla-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pantallaDerecha {
+  font-family: 'Press Start 2P';
+  width: 179px;
+  height: 108px;
+  background-color: var(--secondary-screen-bg-color);
+  border: solid black 2px;
+  border-radius: -13px;
+  font-size: xx-small;
+  padding-right: 2px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 2;
+  margin-top: 46px;
+}
+
+
+/* Botones Azules (Diseño) */
+.contenedor-botones-azules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.botones-contenedor-grdi {
+  width: 146px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.cuardo-azul {
+  border-radius: 2px;
+  border: black 1.5px solid;
+  background-color: var(--square-buttons-color);
+  box-shadow: inset -2px -2px #3298cb;
+}
+
+
+/* Botones del centro*/
+.contenedor-btn-centro {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contenedor-der-c {
+  display: grid;
+}
+
+.contenedor-leds-peque {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.contenedor-leds-peque .led-peque {
+  border: solid black 2px;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.contenedor-leds-peque .dot {
+  height: 2.5px;
+  width: 2.5px;
+  top: 1px;
+  left: 1px;
+}
+
+.conteneodr-cuadros-blancos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuadro-b {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: black 2px solid;
+  background-color: #ffffff;
+  box-shadow: inset -2px -2px gray;
+}
+
+/* Pantallas info finales */
+
+.contenedor-pantallas-finales {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.contenedor-pantallas-finales .pantalla-der-p {
+  width: 94px;
+  height: 25px;
+  font-family: 'Press Start 2P';
+  background-color: var(--secondary-screen-bg-color);
+  border: solid black 2px;
+  border-radius: 4px;
+  font-size: xx-small;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 2;
+}
