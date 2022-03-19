@@ -571,6 +571,10 @@
 
 /* Media Queries*/
 @media (min-width: 375px) and (max-width: 600px) {
+  body{
+    width: 134vw;
+  }
+  
   #pokedex{
     flex-direction: column;
   }
@@ -687,5 +691,9 @@
 
   .contenedor-btn-centro{
     margin-right: 128px;
+  }
+
+  input{
+    margin-left: -110px;
   }
 }
