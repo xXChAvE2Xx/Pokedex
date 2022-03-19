@@ -1,3 +1,9 @@
+const pokeNameInfo = document.getElementById('pokeName-view');
+const statInfo = document.getElementById('pantalla-info');
+const typeScreen = document.getElementById('type-screen');
+const idScreen = document.getElementById('id-screen');
+
+
 const fetchPokemon = () => {
     const pokeName = document.getElementById('pokeName').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
@@ -5,7 +11,12 @@ const fetchPokemon = () => {
     fetch(url).then((res) => {
         if(res.status != "200"){
             console.log("Resultado", res)
-            pokeImage("./404.gif")
+            pokeImage("./assets/img/404.gif")
+            pokeNameInfo.innerHTML = "";
+            statInfo.innerHTML = "";
+            statInfo.innerText = "No información"
+            idScreen.innerHTML = '#-';
+            typeScreen.innerText = '-';
         }else{
             return res.json();
         }
@@ -28,11 +39,6 @@ const fetchPokemon = () => {
 
 const pokeDatos = (name, stats, type, id) => {
     
-    const pokeNameInfo = document.getElementById('pokeName-view');
-    const statInfo = document.getElementById('pantalla-info');
-    const typeScreen = document.getElementById('type-screen');
-    const idScreen = document.getElementById('id-screen');
-
     console.log(stats);
     let l = stats.length;
     statInfo.innerHTML = "";
@@ -46,7 +52,7 @@ const pokeDatos = (name, stats, type, id) => {
 }
 
 const pokeImage = (url) =>{
-    const pokeImg = document.getElementById('pokeIMG');
+    const pokeImg = document.getElementById('pokeImg-insert');
     pokeImg.src = url;
 }
 
